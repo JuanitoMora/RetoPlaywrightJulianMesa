@@ -9,7 +9,7 @@ test('navigateMenuItems', async ({ page }) => {
 
   await expect(page.getByRole('link', { name: 'Dashboard' })).toBeVisible();
 
-  const menuItems = page.getByLabel('Sidepanel').getByRole('listitem');
+  const menuItems = page.locator('.oxd-sidepanel-body').getByRole('listitem');
   const menuItemsCount = await menuItems.count();
   console.log('Numero de elementos en el menu:', menuItemsCount);
 
